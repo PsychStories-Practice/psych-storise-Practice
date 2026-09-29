@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEED - Tâm Lý Học & Phát Triển Bản Thân</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pastel: {
+              50: '#F4F9F5',
+              100: '#E8F5E9',
+              200: '#C8E6C9',
+              300: '#A5D6A7',
+              400: '#81C784',
+              500: '#66BB6A',
+              600: '#4CAF50',
+              700: '#388E3C',
+              800: '#2E7D32',
+              900: '#1B5E20',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Merriweather"', 'serif'],
+            handwriting: ['"Caveat"', 'cursive'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-pastel-50 text-gray-700 font-sans antialiased selection:bg-pastel-200 selection:text-pastel-900">
+
+  <!-- Floating Live Edit Control -->
+  <div class="fixed bottom-5 right-5 z-50">
+    <button id="toggleEditBtn" onclick="toggleLiveEdit()" class="bg-pastel-800 hover:bg-pastel-900 text-white font-medium px-4 py-2.5 rounded-full shadow-lg transition-all flex items-center space-x-2 border border-pastel-300">
+      <i class="fa-solid fa-pen-to-square"></i>
+      <span id="editBtnText">Bật Chỉnh Sửa Live</span>
+    </button>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-pastel-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full bg-pastel-100 flex items-center justify-center text-pastel-700 text-xl">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+        <div>
+          <span class="font-serif font-bold text-2xl text-pastel-900 tracking-tight block leading-none">SEED</span>
+          <span class="text-xs text-pastel-700 tracking-wider uppercase font-medium">Emotional & Behavioral Care</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 font-medium text-gray-600">
+        <a href="#about" class="hover:text-pastel-800 transition">Về SEED</a>
+        <a href="#courses" class="hover:text-pastel-800 transition">Khóa Học Kỹ Năng</a>
+        <a href="#services" class="hover:text-pastel-800 transition">Tham Vấn Tâm Lý</a>
+        <a href="#team" class="hover:text-pastel-800 transition">Chuyên Gia</a>
+        <a href="#blog" class="hover:text-pastel-800 transition">Góc Blog</a>
+      </nav>
+
+      <div>
+        <a href="#services" class="bg-pastel-700 hover:bg-pastel-800 text-white px-5 py-2.5 rounded-full font-medium transition shadow-sm hover:shadow">
+          Đặt Lịch Tham Vấn
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="about" class="py-16 md:py-24 bg-gradient-to-b from-pastel-100/60 to-pastel-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="inline-block px-3.5 py-1.5 rounded-full bg-pastel-200 text-pastel-800 font-semibold text-xs tracking-wide uppercase">
+          Không Gian Chữa Lành & Phát Triển
+        </span>
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+          Ươm mầm cảm xúc, <br><span class="text-pastel-800">chuyển hóa hành vi</span>
+        </h1>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          SEED cung cấp các chương trình huấn luyện kỹ năng quản lý cảm xúc dựa trên bằng chứng khoa học và dịch vụ tham vấn tâm lý chuyên sâu, giúp bạn xây dựng sự bình an nội tâm và làm chủ cuộc sống.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#courses" class="bg-pastel-800 hover:bg-pastel-900 text-white px-6 py-3 rounded-xl font-semibold transition shadow-md">
+            Khám phá Khóa học
+          </a>
+          <a href="#services" class="bg-white hover:bg-pastel-100 text-pastel-900 border border-pastel-300 px-6 py-3 rounded-xl font-semibold transition">
+            Dịch vụ Tham vấn
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="w-full h-[400px] sm:h-[460px] rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+          <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1000&auto=format&fit=crop" alt="Thư giãn và thấu hiểu cảm xúc" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-lg border border-pastel-100 max-w-xs hidden sm:block">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-pastel-100 text-pastel-800 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-gray-900">An Toàn & Bảo Mật</p>
+              <p class="text-xs text-gray-500">Môi trường lắng nghe trắc ẩn và không phán xét</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section (Quản lý cảm xúc & Thay đổi hành vi) -->
+  <section id="courses" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="font-serif text-3xl font-bold text-gray-900">Khóa Học Kỹ Năng Rèn Luyện</h2>
+        <p class="text-gray-600">Trang bị bộ kỹ năng hành vi và quản lý cảm xúc ứng dụng thực tế (DBT, TIPP, STOP) giúp bạn làm chủ phản ứng nội tâm.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Course Card 1 -->
+        <div class="bg-pastel-50 rounded-2xl overflow-hidden border border-pastel-200/60 shadow-sm hover:shadow-md transition flex flex-col">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop" alt="Quản lý cảm xúc" class="w-full h-full object-cover">
+            <span class="absolute top-4 right-4 bg-white/90 text-pastel-800 text-xs font-bold px-3 py-1 rounded-full">6 Buổi • Online/Offline</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div class="space-y-3">
+              <h3 class="font-serif text-xl font-bold text-gray-900">Thấu Hiểu & Điều Hoà Cảm Xúc</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Học cách nhận diện, đặt tên các tầng cảm xúc phức tạp và chuyển hóa năng lượng tiêu cực bằng các kỹ thuật xoa dịu giác quan.
+              </p>
+            </div>
+            <div class="pt-6 border-t border-pastel-200 mt-6 flex items-center justify-between">
+              <span class="text-xs font-semibold text-pastel-800 uppercase tracking-wider">Kỹ năng DBT & Mindful</span>
+              <a href="#" class="text-pastel-800 font-bold text-sm hover:underline flex items-center gap-1">Chi tiết <i class="fa-solid fa-chevron-right text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Card 2 -->
+        <div class="bg-pastel-50 rounded-2xl overflow-hidden border border-pastel-200/60 shadow-sm hover:shadow-md transition flex flex-col">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" alt="Thay đổi hành vi" class="w-full h-full object-cover">
+            <span class="absolute top-4 right-4 bg-white/90 text-pastel-800 text-xs font-bold px-3 py-1 rounded-full">4 Buổi • Cuối tuần</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div class="space-y-3">
+              <h3 class="font-serif text-xl font-bold text-gray-900">Tự Chủ Hành Vi & Làm Chủ Căng Thẳng</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Thực hành kỹ thuật TIPP & STOP giúp hạ nhiệt cơn giận tức thì, ngăn chặn các hành vi bốc đồng và tái lập thói quen ứng xử tích cực.
+              </p>
+            </div>
+            <div class="pt-6 border-t border-pastel-200 mt-6 flex items-center justify-between">
+              <span class="text-xs font-semibold text-pastel-800 uppercase tracking-wider">Chuyển hóa thói quen</span>
+              <a href="#" class="text-pastel-800 font-bold text-sm hover:underline flex items-center gap-1">Chi tiết <i class="fa-solid fa-chevron-right text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Card 3 -->
+        <div class="bg-pastel-50 rounded-2xl overflow-hidden border border-pastel-200/60 shadow-sm hover:shadow-md transition flex flex-col">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Liệu pháp Lược đồ" class="w-full h-full object-cover">
+            <span class="absolute top-4 right-4 bg-white/90 text-pastel-800 text-xs font-bold px-3 py-1 rounded-full">8 Buổi • Chuyên sâu</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div class="space-y-3">
+              <h3 class="font-serif text-xl font-bold text-gray-900">Giải Mã Lược Đồ Tâm Lý Cá Nhân</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Nhận diện các mẫu hành vi lặp lại từ quá khứ (Schema Therapy), xoa dịu đứa trẻ bên trong và xây dựng chế độ Người Lớn Lành Mạnh.
+              </p>
+            </div>
+            <div class="pt-6 border-t border-pastel-200 mt-6 flex items-center justify-between">
+              <span class="text-xs font-semibold text-pastel-800 uppercase tracking-wider">Trị liệu Lược đồ</span>
+              <a href="#" class="text-pastel-800 font-bold text-sm hover:underline flex items-center gap-1">Chi tiết <i class="fa-solid fa-chevron-right text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Counseling Services Section -->
+  <section id="services" class="py-20 bg-pastel-100/40 border-y border-pastel-200/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="font-serif text-3xl font-bold text-gray-900">Dịch Vụ Tham Vấn Tâm Lý</h2>
+        <p class="text-gray-600">Đồng hành chuyên sâu và bảo mật cùng bạn qua từng giai đoạn khó khăn trong cuộc sống.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Service 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-pastel-200 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-pastel-100 text-pastel-800 flex items-center justify-center text-xl">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-gray-900">Tham Vấn Tâm Lý Cá Nhân 1:1</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Dành cho cá nhân đang gặp các vấn đề về rối loạn cảm xúc, lo âu, trầm cảm, áp lực cuộc sống hoặc mong muốn thấu hiểu bản thân sâu sắc hơn.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 pt-2">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pastel-600"></i> Thời lượng: 50 phút / phiên</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pastel-600"></i> Hình thức: Trực tiếp hoặc Online</li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-pastel-200 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-pastel-100 text-pastel-800 flex items-center justify-center text-xl">
+            <i class="fa-solid fa-people-roof"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-gray-900">Tham Vấn Nhóm & Gia Đình</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Hỗ trợ kết nối, giải quyết mâu thuẫn giao tiếp, gắn kết tình cảm giữa các thành viên trong gia đình hoặc nhóm hỗ trợ đồng đẳng.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 pt-2">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pastel-600"></i> Thời lượng: 90 phút / phiên</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pastel-600"></i> Xây dựng không gian đối thoại an toàn</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section (Đội ngũ chuyên gia) -->
+  <section id="team" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="font-serif text-3xl font-bold text-gray-900">Đội Ngũ Chuyên Gia SEED</h2>
+        <p class="text-gray-600">Những nhà thực hành tâm lý giàu kinh nghiệm, tận tâm và luôn lấy con người làm trung tâm.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Expert 1 -->
+        <div class="bg-pastel-50 rounded-2xl p-6 border border-pastel-200 text-center space-y-4">
+          <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-md">
+            <img src="https://images.unsplash.com/photo-1594824813566-8885557580c3?q=80&w=600&auto=format&fit=crop" alt="Chuyên gia Tâm lý" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 class="font-serif text-xl font-bold text-gray-900">Đinh Thị Hằng Nga</h3>
+            <p class="text-xs text-pastel-800 font-bold uppercase tracking-wider mt-1">Thạc sĩ Tâm lý học Lâm sàng</p>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Chuyên sâu về Liệu pháp Lược đồ (Schema Therapy), Liệu pháp Hành vi Biện chứng (DBT) và Tiếp cận Lấy con người làm trung tâm.
+          </p>
+        </div>
+
+        <!-- Expert 2 -->
+        <div class="bg-pastel-50 rounded-2xl p-6 border border-pastel-200 text-center space-y-4">
+          <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-md">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop" alt="Nhà trị liệu" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 class="font-serif text-xl font-bold text-gray-900">Nguyễn Minh Anh</h3>
+            <p class="text-xs text-pastel-800 font-bold uppercase tracking-wider mt-1">Chuyên gia Tham vấn Tham vấn Học đường</p>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Kinh nghiệm đồng hành cùng thanh thiếu niên và phụ huynh trong việc giải quyết khủng hoảng tâm lý tuổi học đường và định hướng cảm xúc.
+          </p>
+        </div>
+
+        <!-- Expert 3 -->
+        <div class="bg-pastel-50 rounded-2xl p-6 border border-pastel-200 text-center space-y-4">
+          <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-md">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop" alt="Bác sĩ tham vấn" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 class="font-serif text-xl font-bold text-gray-900">Lê Hoàng Nam</h3>
+            <p class="text-xs text-pastel-800 font-bold uppercase tracking-wider mt-1">Chuyên gia Hướng dẫn Yoga Sang Chấn</p>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Kết hợp thực hành Thích ứng Yoga và điều hòa thân-tâm trong hỗ trợ phục hồi sang chấn tâm lý và giảm thiểu lo âu mãn tính.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-20 bg-pastel-100/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <h2 class="font-serif text-3xl font-bold text-gray-900">Góc Chia Sẻ & Blog</h2>
+          <p class="text-gray-600 mt-2">Chuyện đời, chuyện nghề & Tri thức chăm sóc sức khỏe tinh thần</p>
+        </div>
+        <a href="#" class="mt-4 md:mt-0 text-pastel-800 font-bold hover:underline flex items-center gap-1">
+          Xem tất cả bài viết <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Post 1 -->
+        <article class="bg-white rounded-2xl overflow-hidden border border-pastel-200 shadow-sm hover:shadow transition">
+          <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=800&auto=format&fit=crop" alt="Bài viết blog" class="h-48 w-full object-cover">
+          <div class="p-6 space-y-3">
+            <span class="text-xs text-pastel-700 font-semibold uppercase">Cảm xúc & Thân tâm</span>
+            <h3 class="font-serif font-bold text-lg text-gray-900 hover:text-pastel-800 cursor-pointer">Làm sao để ôm ấp cơn giận mà không làm tổn thương ai?</h3>
+            <p class="text-sm text-gray-600 line-clamp-2">Hiểu về cơ chế thần kinh của sự tức giận và cách ứng dụng kỹ thuật hạ nhiệt TIPP ngay trong khoảnh khắc bùng nổ.</p>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="bg-white rounded-2xl overflow-hidden border border-pastel-200 shadow-sm hover:shadow transition">
+          <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=800&auto=format&fit=crop" alt="Bài viết blog" class="h-48 w-full object-cover">
+          <div class="p-6 space-y-3">
+            <span class="text-xs text-pastel-700 font-semibold uppercase">Nghề Tâm Lý</span>
+            <h3 class="font-serif font-bold text-lg text-gray-900 hover:text-pastel-800 cursor-pointer">Chuyện lắng nghe: Khi nhà trị liệu cũng học cách dịu dàng với chính mình</h3>
+            <p class="text-sm text-gray-600 line-clamp-2">Những trăn trở đằng sau phòng tham vấn và tầm quan trọng của việc duy trì ranh giới cá nhân lành mạnh.</p>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="bg-white rounded-2xl overflow-hidden border border-pastel-200 shadow-sm hover:shadow transition">
+          <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=800&auto=format&fit=crop" alt="Bài viết blog" class="h-48 w-full object-cover">
+          <div class="p-6 space-y-3">
+            <span class="text-xs text-pastel-700 font-semibold uppercase">Lược đồ tâm lý</span>
+            <h3 class="font-serif font-bold text-lg text-gray-900 hover:text-pastel-800 cursor-pointer">Vì sao chúng ta thường chọn yêu những người làm ta tổn thương?</h3>
+            <p class="text-sm text-gray-600 line-clamp-2">Giải mã hiện tượng "sự quen thuộc độc hại" qua góc nhìn của Schema Therapy và hành trình tự chữa lành.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-pastel-900 text-pastel-100 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+      <div class="space-y-3">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-seedling text-pastel-300 text-xl"></i>
+          <span class="font-serif font-bold text-2xl text-white">SEED</span>
+        </div>
+        <p class="text-sm text-pastel-200 leading-relaxed">Ươm mầm cảm xúc - Chuyển hóa hành vi - Kết nối bản thân.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3">Liên Hệ</h4>
+        <p class="text-sm text-pastel-200">Email: contact@seedddev.vn</p>
+        <p class="text-sm text-pastel-200">Địa chỉ: Hà Nội, Việt Nam</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3">Theo Dõi</h4>
+        <div class="flex space-x-4 text-xl text-pastel-300">
+          <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="hover:text-white"><i class="fa-brands fa-spotify"></i></a>
+          <a href="#" class="hover:text-white"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script kích hoạt Live Edit trực tiếp -->
+  <script>
+    let isEditing = false;
+    function toggleLiveEdit() {
+      isEditing = !isEditing;
+      document.body.contentEditable = isEditing ? 'true' : 'false';
+      
+      const btnText = document.getElementById('editBtnText');
+      const btn = document.getElementById('toggleEditBtn');
+      
+      if (isEditing) {
+        btnText.innerText = 'Đang Chỉnh Sửa (Bấm để Khóa)';
+        btn.classList.remove('bg-pastel-800');
+        btn.classList.add('bg-amber-600');
+      } else {
+        btnText.innerText = 'Bật Chỉnh Sửa Live';
+        btn.classList.remove('bg-amber-600');
+        btn.classList.add('bg-pastel-800');
+      }
+    }
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
